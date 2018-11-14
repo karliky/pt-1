@@ -5,6 +5,10 @@ import styled from 'styled-components'
 import Gnome from '../components/Gnomes'
 import Search from '../components/Search'
 
+// Elements 
+
+import Loader from '../components/elements/Loader'
+
 const Wrapper = styled.section`
   padding: 0 3em;
 `;
@@ -47,7 +51,7 @@ class App extends Component {
     const data = items.Brastlewark
 
     if (!isLoaded) {
-      return (<p>Loading...</p>)
+      return <Loader />;
     }
 
     else {
