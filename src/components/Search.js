@@ -27,7 +27,7 @@ class Filter extends Component {
           <Input
             type="text"
             ref= {(value) => {this.myValue = value}}
-            placeholder="Filter here"
+            placeholder="Filter here by name"
             onChange={this.filterUpdate.bind(this)}
           />
         </Form>
