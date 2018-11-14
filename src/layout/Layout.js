@@ -52,28 +52,30 @@ class App extends Component {
 
     else {
       return (
-        <Wrapper>
+        <section>
           <Search 
-            filterText={this.state.filterText}
-            filterUpdate={this.filterUpdate.bind(this)}
+          filterText={this.state.filterText}
+          filterUpdate={this.filterUpdate.bind(this)}
           />
-            {data
-            .filter(item => {
-              return item.name.indexOf(filterText) >= 0
-            })
-            .map(item => (
-              <WrapperItem key={item.id}>
-                <Gnome
-                name = {item.name} 
-                thumbnail = {item.thumbnail} 
-                weight = {item.weight}
-                height = {item.height}
-                professions = {item.professions}
-                friends={item.friends}
-                />
-              </WrapperItem>
-            ))}
-        </Wrapper>
+          <Wrapper>
+              {data
+              .filter(item => {
+                return item.name.indexOf(filterText) >= 0;
+              })
+              .map(item => (
+                <WrapperItem key={item.id}>
+                  <Gnome
+                  name = {item.name} 
+                  thumbnail = {item.thumbnail} 
+                  weight = {item.weight}
+                  height = {item.height}
+                  professions = {item.professions}
+                  friends={item.friends}
+                  />
+                </WrapperItem>
+              ))}
+          </Wrapper>
+        </section>
       )
     }
   }

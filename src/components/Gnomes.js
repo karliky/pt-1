@@ -18,8 +18,8 @@ const Wrapper = styled.section`
   display: inline-block;
 
   img {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     display: block;
     margin: 0 auto;
@@ -30,6 +30,19 @@ const Wrapper = styled.section`
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
   }
 `;
+
+const Name = styled.h2`
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin: 10px;
+`
+
+const Text = styled.p`
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 16px;
+`
 
 const Gnomes = (props) => {
   const name = props.name;
@@ -42,9 +55,8 @@ const Gnomes = (props) => {
 
   return <Wrapper>
       <img src={thumbnail} alt="thumbnail" />
-      <h2>Name: {name}</h2>
-      <p>Height: {height}</p>
-      <p>Weight: {weight}</p>
+      <Name>{name}</Name>
+      <Text><strong>Height:</strong> {height}  ||  <strong>Weight:</strong> {weight}</Text>
 
       <Professions professions = {professions} />
       <Friends friends = {friends} />
