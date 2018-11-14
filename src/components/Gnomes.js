@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 
 import Professions from './Professions'
 import Friends from './Friends'

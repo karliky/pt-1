@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
 import styled from 'styled-components'
 
 // Components 
-import Gnome from './Gnomes'
-import Search from './Search'
+import Gnome from '../components/Gnomes'
+import Search from '../components/Search'
 
 
 class App extends Component {
