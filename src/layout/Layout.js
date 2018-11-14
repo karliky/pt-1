@@ -5,6 +5,14 @@ import styled from 'styled-components'
 import Gnome from '../components/Gnomes'
 import Search from '../components/Search'
 
+const Wrapper = styled.section`
+  padding: 0 3em;
+`;
+
+const WrapperItem = styled.div`
+  display: inline-block;
+`
+
 
 class App extends Component {
   constructor(props) {
@@ -44,28 +52,28 @@ class App extends Component {
 
     else {
       return (
-        <div className="pruebaWrapper">
-        <Search 
-          filterText={this.state.filterText}
-          filterUpdate={this.filterUpdate.bind(this)}
-        />
-          {data
-          .filter(item => {
-            return item.name.indexOf(filterText) >= 0
-          })
-          .map(item => (
-            <div className="prueba" key={item.id}>
-              <Gnome
-               name = {item.name} 
-               thumbnail = {item.thumbnail} 
-               weight = {item.weight}
-               height = {item.height}
-               professions = {item.professions}
-               friends={item.friends}
-               />
-            </div>
-          ))}
-        </div>
+        <Wrapper>
+          <Search 
+            filterText={this.state.filterText}
+            filterUpdate={this.filterUpdate.bind(this)}
+          />
+            {data
+            .filter(item => {
+              return item.name.indexOf(filterText) >= 0
+            })
+            .map(item => (
+              <WrapperItem key={item.id}>
+                <Gnome
+                name = {item.name} 
+                thumbnail = {item.thumbnail} 
+                weight = {item.weight}
+                height = {item.height}
+                professions = {item.professions}
+                friends={item.friends}
+                />
+              </WrapperItem>
+            ))}
+        </Wrapper>
       )
     }
   }
