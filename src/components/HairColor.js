@@ -7,7 +7,8 @@ const Hair = styled.div`
   border: 1px solid black;
   border-radius: 6px;
   display: inline-block;
-`
+  vertical-align: top;
+`;
 
 const HairColor = (props) => {
 

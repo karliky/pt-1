@@ -14,7 +14,7 @@ const Wrapper = styled.section`
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   margin: 0.5rem;
   width: 350px;
-  height: 600px;
+  height: 750px;
   vertical-align: top;
   display: inline-block;
 
@@ -37,13 +37,15 @@ const Name = styled.h2`
   font-weight: 700;
   text-align: center;
   margin: 10px;
-`
+  vertical-align: top;
+`;
 
 const Text = styled.p`
   margin-bottom: 20px;
   text-align: center;
   font-size: 16px;
-`
+  display: inline-block;
+`;
 
 const Gnomes = (props) => {
 
@@ -60,7 +62,7 @@ const Gnomes = (props) => {
       <Name>{name}</Name>
       <Text><strong>Height:</strong> {height}  ||  <strong>Weight:</strong> {weight}</Text>
 
-      <Text>Hair Color:</Text> <HairColorWrapper hairColor={hairColor}></HairColorWrapper>
+      <Text><strong>Hair Color:</strong></Text> <HairColorWrapper hairColor={hairColor}></HairColorWrapper>
 
       <Professions professions = {professions} />
       <Friends friends = {friends} />

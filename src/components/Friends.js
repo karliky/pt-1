@@ -20,6 +20,7 @@ const NoFriends = styled.p`
   text-align: center;
   font-size: 16px;
   font-weight: 600;
+  margin-top: 20px;
 `
 
 const Friends = (props) => {
