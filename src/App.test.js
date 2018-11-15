@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { expect } from "chai";
+import { shallow } from "enzyme";
+import sinon from "sinon";
+
 import Layout from './layout/Layout';
 
-it('expect to have 1337 gnomes', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Layout />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+describe('testing layout', () => {
+  const wrapper = shallow(<Layout />);
+
+  it ('includes one section', () => {
+    expect(wrapper.find('span.bar')).to.be.equal('test!')
+  })
+})

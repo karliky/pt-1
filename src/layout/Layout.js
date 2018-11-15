@@ -51,10 +51,12 @@ class App extends Component {
 
     const { isLoaded, items, filterText } = this.state;
     const data = items.Brastlewark
+    console.log(data)
     
     if (!isLoaded) {
       return <Loader />;
     }
+
     
     else {
       return (
@@ -79,6 +81,7 @@ class App extends Component {
                   friends={item.friends}
                   hairColor={item.hair_color}
                   />
+                <span className="bar">text!</span>
                 </WrapperItem>
               ))}
           </Wrapper>
