@@ -26,7 +26,7 @@ class App extends Component {
       items: [],
       isLoaded: false,
       filterText: '',
-      genre: ['male', 'female']
+      itemsCopy: []
     };
   }
 
@@ -34,7 +34,7 @@ class App extends Component {
     fetch("https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json")
       .then(res => res.json())
       .then(json => {
-        this.setState({ isLoaded: true, items: json });
+        this.setState({ isLoaded: true, items: json, itemsCopy: json });
       })
       .catch(error => console.log("Error: ", error));
   }
@@ -52,7 +52,6 @@ class App extends Component {
     const { isLoaded, items, filterText } = this.state;
     const data = items.Brastlewark
     
-    
     if (!isLoaded) {
       return <Loader />;
     }
@@ -67,7 +66,6 @@ class App extends Component {
           <Wrapper>
               {data
               .filter(item => {
-                
                 return item.name.toLowerCase().indexOf(filterText) >= 0;
               })
               .map(item => (
@@ -81,7 +79,6 @@ class App extends Component {
                   friends={item.friends}
                   hairColor={item.hair_color}
                   />
-                  
                 </WrapperItem>
               ))}
           </Wrapper>
