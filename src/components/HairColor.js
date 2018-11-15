@@ -6,15 +6,16 @@ const Hair = styled.div`
   height: 20px;
   border: 1px solid black;
   border-radius: 6px;
+  display: inline-block;
 `
 
 const HairColor = (props) => {
 
-const hairColor = props.hair_Color;
+const hairColor = props.hairColor;
 
   
     return (
-      <Hair style={{'backgroundColor' : hairColor}}>{hairColor}</Hair>
+      <Hair style={{'backgroundColor' : hairColor}}></Hair>
     )
   }
 

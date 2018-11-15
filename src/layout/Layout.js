@@ -51,11 +51,12 @@ class App extends Component {
 
     const { isLoaded, items, filterText } = this.state;
     const data = items.Brastlewark
-
+    
+    
     if (!isLoaded) {
       return <Loader />;
     }
-
+    
     else {
       return (
         <section>
@@ -66,6 +67,7 @@ class App extends Component {
           <Wrapper>
               {data
               .filter(item => {
+                
                 return item.name.toLowerCase().indexOf(filterText) >= 0;
               })
               .map(item => (
@@ -79,6 +81,7 @@ class App extends Component {
                   friends={item.friends}
                   hairColor={item.hair_color}
                   />
+                  
                 </WrapperItem>
               ))}
           </Wrapper>

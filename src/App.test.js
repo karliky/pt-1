@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Layout from './layout/Layout';
 
-it('renders without crashing', () => {
+it('expect to have 1337 gnomes', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+  ReactDOM.render(<Layout />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
