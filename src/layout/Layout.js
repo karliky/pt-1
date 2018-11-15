@@ -25,7 +25,8 @@ class App extends Component {
     this.state = {
       items: [],
       isLoaded: false,
-      filterText: ''
+      filterText: '',
+      genre: ['male', 'female']
     };
   }
 
@@ -43,6 +44,7 @@ class App extends Component {
       filterText: value
     })
   }
+
 
 
   render() {
@@ -64,7 +66,7 @@ class App extends Component {
           <Wrapper>
               {data
               .filter(item => {
-                return item.name.indexOf(filterText) >= 0;
+                return item.name.toLowerCase().indexOf(filterText) >= 0;
               })
               .map(item => (
                 <WrapperItem key={item.id}>
@@ -75,6 +77,7 @@ class App extends Component {
                   height = {item.height}
                   professions = {item.professions}
                   friends={item.friends}
+                  hairColor={item.hair_color}
                   />
                 </WrapperItem>
               ))}

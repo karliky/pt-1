@@ -6,7 +6,7 @@ const LoaderContainer = styled.div`
   height: 100px;
   border-radius: 100%;
   position: relative;
-  margin: 350px auto;
+  margin: 250px auto;
 
   &:before,
   &:after {

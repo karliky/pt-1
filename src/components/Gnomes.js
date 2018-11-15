@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Professions from './Professions'
 import Friends from './Friends'
+import HairColor from './HairColor'
 
 const Wrapper = styled.section`
   transition: all 200ms ease;
@@ -60,6 +61,8 @@ const Gnomes = (props) => {
 
       <Professions professions = {professions} />
       <Friends friends = {friends} />
+      
+      <HairColor>hairColor = {hairColor}</HairColor>
     </Wrapper>;
 }
 
