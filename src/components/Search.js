@@ -6,6 +6,9 @@ const Input = styled.input`
   padding: 10px;
   display: block;
   margin: 0 auto;
+  &:hover, :focus, :active {
+    outline: none;
+  }
 `;
 
 const Form = styled.form`
