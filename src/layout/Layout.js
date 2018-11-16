@@ -26,7 +26,7 @@ class App extends Component {
       items: [],
       isLoaded: false,
       filterText: '',
-      itemsCopy: []
+      numberOfItems: 25
     };
   }
 
@@ -49,7 +49,7 @@ class App extends Component {
 
   render() {
 
-    const { isLoaded, items, filterText } = this.state;
+    const { isLoaded, items, filterText, numberOfItems } = this.state;
     const data = items.Brastlewark
     console.log(data)
     
@@ -70,6 +70,7 @@ class App extends Component {
               .filter(item => {
                 return item.name.toLowerCase().indexOf(filterText) >= 0;
               })
+              .slice(0, numberOfItems)
               .map(item => (
                 <WrapperItem key={item.id}>
                   <Gnome
@@ -81,7 +82,6 @@ class App extends Component {
                   friends={item.friends}
                   hairColor={item.hair_color}
                   />
-                <span className="bar">text!</span>
                 </WrapperItem>
               ))}
           </Wrapper>
