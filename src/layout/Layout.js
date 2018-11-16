@@ -57,7 +57,6 @@ class App extends Component {
 
     const { isLoaded, items, filterText, numberOfItems } = this.state;
     const data = items.Brastlewark
-    console.log(data)
     
     if (!isLoaded) {
       return <Loader />;
