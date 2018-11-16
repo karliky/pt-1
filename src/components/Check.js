@@ -2,15 +2,18 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 const Input = styled.input`
-  width: 90%;
+  width: 50%;
   padding: 10px;
   display: block;
   margin: 0 auto;
+  position: absolute;
+  top: 0;
 `
 
 const Form = styled.form`
   background-color: #61dafb;
   padding: 20px;
+  position: relative;
 `;
 
 class Filter extends Component {

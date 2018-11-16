@@ -13,7 +13,7 @@ const Input = styled.input`
 
 const Form = styled.form`
   background-color: #61dafb;
-  padding: 20px;
+  padding: 10px;
 `;
 
 class Filter extends Component {
