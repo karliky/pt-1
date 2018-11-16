@@ -4,9 +4,9 @@ import styled from 'styled-components'
 // Components 
 import Gnome from '../components/Gnomes'
 import Search from '../components/Search'
+import NumberOfItems from '../components/NumberOfItems'
 
 // Elements 
-
 import Loader from '../components/elements/Loader'
 
 const Wrapper = styled.section`
@@ -45,6 +45,12 @@ class App extends Component {
     })
   }
 
+  filterNumberOfDisplay (value) {
+    this.setState({
+      numberOfItems: value
+    })
+  }
+
 
 
   render() {
@@ -64,6 +70,10 @@ class App extends Component {
           <Search 
           filterText={this.state.filterText}
           filterUpdate={this.filterUpdate.bind(this)}
+          />
+          <NumberOfItems 
+          numberOfItems={this.state.numberOfItems}
+          filterNumberOfDisplay={this.filterNumberOfDisplay.bind(this)}
           />
           <Wrapper>
               {data
