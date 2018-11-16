@@ -6,7 +6,7 @@ const Input = styled.input`
   padding: 10px;
   display: block;
   margin: 0 auto;
-`
+`;
 
 const Form = styled.form`
   background-color: #61dafb;
