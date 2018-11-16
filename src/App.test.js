@@ -10,6 +10,6 @@ describe('testing layout', () => {
   const wrapper = shallow(<Layout />);
 
   it ('includes one section', () => {
-    expect(wrapper.find('span.bar')).to.be.equal('test!')
+    expect(wrapper.find('span.bar')).to.be.equal('!')
   })
 })

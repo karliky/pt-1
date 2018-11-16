@@ -66,6 +66,7 @@ class App extends Component {
     else {
       return (
         <section>
+        <span className="bar">test!</span>
           <Search 
           filterText={this.state.filterText}
           filterUpdate={this.filterUpdate.bind(this)}
