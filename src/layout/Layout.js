@@ -9,7 +9,11 @@ import NumberOfItems from '../components/NumberOfItems'
 // Elements 
 import Loader from '../components/elements/Loader'
 
-import male from '../img/transgender-solid.svg'
+//Images
+import transgender from '../img/transgender-solid.svg'
+import male from '../img/mars-solid.svg'
+import transgenderAlt from '../img/transgender-alt-solid.svg'
+import female from '../img/venus-solid.svg'
 
 const Wrapper = styled.section`
   padding: 0 3em;
@@ -29,7 +33,6 @@ class App extends Component {
       isLoaded: false,
       filterText: '',
       numberOfItems: 25,
-      genre: ''
     };
   }
 
@@ -60,7 +63,7 @@ class App extends Component {
   render() {
 
     const { isLoaded, items, filterText, numberOfItems } = this.state;
-    const numberOfGenre = ['male', 'female']
+    const numberOfGenre = [male, female, transgenderAlt, transgender];
     const data = items.Brastlewark
     
     if (!isLoaded) {
@@ -79,7 +82,6 @@ class App extends Component {
           filterNumberOfDisplay={this.filterNumberOfDisplay.bind(this)}
           />
           <Wrapper>
-            <img src={male} />
               {data
               .filter(item => {
                 return item.name.toLowerCase().indexOf(filterText) >= 0;

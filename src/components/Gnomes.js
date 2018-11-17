@@ -6,6 +6,7 @@ import Friends from './Friends'
 import HairColorWrapper from './HairColor'
 
 const Wrapper = styled.section`
+  position: relative;
   transition: all 200ms ease;
   padding: 2.5rem;
   background: #fff;
@@ -47,6 +48,14 @@ const Text = styled.p`
   display: inline-block;
 `;
 
+const Img = styled.img`
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  right: 0;
+`;
+
 const Gnomes = (props) => {
 
   const name = props.name;
@@ -68,7 +77,7 @@ const Gnomes = (props) => {
       <Professions professions = {professions} />
       <Friends friends = {friends} />
 
-      <p>{genre}</p>
+      <Img src={genre} alt="genre" />
       
     </Wrapper>;
 }
