@@ -9,6 +9,8 @@ import NumberOfItems from '../components/NumberOfItems'
 // Elements 
 import Loader from '../components/elements/Loader'
 
+import male from '../img/transgender-solid.svg'
+
 const Wrapper = styled.section`
   padding: 0 3em;
 `;
@@ -26,7 +28,8 @@ class App extends Component {
       items: [],
       isLoaded: false,
       filterText: '',
-      numberOfItems: 25
+      numberOfItems: 25,
+      genre: ''
     };
   }
 
@@ -36,7 +39,7 @@ class App extends Component {
       .then(json => {
         this.setState({ isLoaded: true, items: json, itemsCopy: json });
       })
-      .catch(error => console.log("Error: ", error));
+      .catch(error => console.log("Error -> ", error));
   }
 
   filterUpdate (value) {
@@ -53,16 +56,17 @@ class App extends Component {
 
 
 
+
   render() {
 
     const { isLoaded, items, filterText, numberOfItems } = this.state;
+    const numberOfGenre = ['male', 'female']
     const data = items.Brastlewark
     
     if (!isLoaded) {
       return <Loader />;
     }
 
-    
     else {
       return (
         <section>
@@ -75,6 +79,7 @@ class App extends Component {
           filterNumberOfDisplay={this.filterNumberOfDisplay.bind(this)}
           />
           <Wrapper>
+            <img src={male} />
               {data
               .filter(item => {
                 return item.name.toLowerCase().indexOf(filterText) >= 0;
@@ -88,8 +93,9 @@ class App extends Component {
                   weight = {item.weight}
                   height = {item.height}
                   professions = {item.professions}
-                  friends={item.friends}
-                  hairColor={item.hair_color}
+                  friends = {item.friends}
+                  hairColor = {item.hair_color}
+                  genre = {numberOfGenre[Math.floor(Math.random() * 2)]}
                   />
                 </WrapperItem>
               ))}

@@ -56,6 +56,7 @@ const Gnomes = (props) => {
   const hairColor = props.hairColor;
   const professions = props.professions;
   const friends = props.friends;
+  const genre = props.genre;
 
   return <Wrapper>
       <img src={thumbnail} alt="thumbnail" />
@@ -66,6 +67,8 @@ const Gnomes = (props) => {
 
       <Professions professions = {professions} />
       <Friends friends = {friends} />
+
+      <p>{genre}</p>
       
     </Wrapper>;
 }
