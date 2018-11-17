@@ -97,7 +97,7 @@ class App extends Component {
                   professions = {item.professions}
                   friends = {item.friends}
                   hairColor = {item.hair_color}
-                  genre = {numberOfGenre[Math.floor(Math.random() * 2)]}
+                  genre = {numberOfGenre[Math.floor(Math.random() * numberOfGenre.length)]}
                   />
                 </WrapperItem>
               ))}

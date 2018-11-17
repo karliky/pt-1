@@ -20,11 +20,7 @@ const Wrapper = styled.section`
   display: inline-block;
 
   img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto;
+    
   }
 
   &:hover {
@@ -50,10 +46,17 @@ const Text = styled.p`
 
 const Img = styled.img`
   position: absolute;
-  width: 30px;
-  height: 30px;
-  top: 0;
-  right: 0;
+  width: 50px;
+  top: 10px;
+  right: 10px;
+`;
+
+const Thumbnail = styled.img`
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
 `;
 
 const Gnomes = (props) => {
@@ -68,7 +71,7 @@ const Gnomes = (props) => {
   const genre = props.genre;
 
   return <Wrapper>
-      <img src={thumbnail} alt="thumbnail" />
+      <Thumbnail src={thumbnail} alt="thumbnail" />
       <Name>{name}</Name>
       <Text><strong>Height:</strong> {height}  ||  <strong>Weight:</strong> {weight}</Text>
 
